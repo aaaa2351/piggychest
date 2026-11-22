@@ -1,0 +1,350 @@
+@font-face {
+  font-family: "pigChestHfont";
+  src: url("/fonts/NeuePlakRegular.woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "boldNue";
+  src: url("/fonts/NeuePlakExtraBlack.woff");
+  font-weight: 900;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: #171616;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+
+body {
+  background: #f2f7f8;
+  color: #3d4f60;
+  line-height: 27.2px;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+}
+
+.margn {
+  max-width: 1270px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #f2f7f8;
+  width: 100%;
+  z-index: 1000;
+}
+
+header.scrolled {
+  box-shadow: 0 0 7px 5px #ced3da;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.714);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  justify-content: space-between;
+  padding: 19px 16px 25px 16px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 0;
+}
+
+.flex_nav1 {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+nav .icon img {
+  width: 175px;
+  height: auto;
+}
+
+nav .links ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 10px;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #3d4f60;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 27.2px;
+}
+
+.links i {
+  color: #3d4f60;
+  font-size: 12px;
+}
+
+.auths {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auths button {
+  cursor: pointer;
+  background: #0c1825;
+  font-size: 16px;
+  letter-spacing: 0.1;
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  padding: 15px 18px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
+
+.auths .SignIn {
+  background: transparent;
+  border: 1px solid #0c1825;
+  color: #0c1825;
+  padding: 15px 20px;
+}
+
+.hero {
+  max-width: 1240px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #f2f7f8;
+  justify-content: space-between;
+  margin: 40px 0;
+  /* justify-content: center; */
+}
+
+.hero .txts {
+  width: 710px;
+}
+.getApp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* gap: 40px; */
+}
+.hero h1 {
+  color: #1f2a41;
+  line-height: 60px;
+  font-size: 60px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  width: 710px;
+  flex-wrap: wrap;
+  font-family: "boldNue", "sans-serif";
+  gap: 10px;
+}
+
+.hero h1 .icon svg {
+  animation: spin 10s linear infinite;
+}
+.hero .getApp p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3d4f60;
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: left;
+  max-width: 400px;
+  line-height: 140%;
+  letter-spacing: -2%;
+}
+.hero .getApp button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 12px;
+}
+
+.getAppBtns {
+  display: flex;
+  align-items: center;
+}
+.getApp .apple {
+  position: relative;
+  background: #1734ca;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-right: 16px;
+  color: white;
+}
+.getApp .phone {
+  position: relative;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: rgb(18, 34, 49);
+}
+.getApp .apple::before {
+  content: "";
+  background: url(/whiteAppleLogo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 10px;
+}
+.getApp .phone::before {
+  content: "";
+  background: url(/google-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 10px;
+}
+.security {
+  max-width: 1240px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #f2f7f8;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 16px 100px;
+}
+.images {
+  min-height: 520px;
+  margin-top: 3rem;
+  margin-bottom: 140px;
+  position: relative;
+}
+.security .header_img img {
+  translate: none;
+  rotate: none;
+  scale: none;
+  border-radius: 30px;
+  filter: blur(0px);
+  transform: translate(0px, 0px);
+  opacity: 1;
+  width: 100%;
+}
+@keyframes spin {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.header_img img:not(:last-child) {
+  position: absolute;
+  width: 410px;
+  z-index: 100;
+}
+.header_img img.img1 {
+  bottom: -9px;
+  left: 528px;
+}
+.header_img img.img11 {
+  top: 167px;
+  right: -97px;
+}
+.header_img img.img1111 {
+  top: 235px;
+  left: -125px;
+}
+.security .txtss {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.security .txt {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.txt .text {
+  display: flex;
+  width: 700px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.text h2 {
+  translate: none;
+  rotate: none;
+  scale: none;
+  opacity: 1;
+  visibility: inherit;
+  transform: translate(0px, 0px);
+  font-size: 24px;
+  line-height: 33px;
+  font-family: "boldNue", "sans-serif";
+  letter-spacing: -3%;
+  width: 700px;
+  color: #1f2a41;
+}
+.text p {
+  max-width: 621px;
+  font-size: 16px;
+  line-height: 25px;
+}
+.txt .icon {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-right: 10px;
+  align-items: center;
+}
+.security .txt svg {
+  width: 103px;
+  animation: spin 10s linear infinite;
+  height: auto;
+}
+.security .txt img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.security .texts {
+  background: #fff;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 30px;
+  color: #122231;
+  gap: 10px;
+}
+
+.build{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1240px;
+  margin: auto;
+}
