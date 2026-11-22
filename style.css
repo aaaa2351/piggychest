@@ -64,7 +64,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 24px 0;
+  padding: 40px 0 0;
 }
 
 .flex_nav1 {
@@ -183,6 +183,9 @@ nav .links ul {
   border-radius: 12px;
 }
 
+.getApp button:hover {
+  transform: translateY(-8px);
+}
 .getAppBtns {
   display: flex;
   align-items: center;
@@ -235,7 +238,8 @@ nav .links ul {
 }
 .images {
   min-height: 520px;
-  margin-top: 3rem;
+  margin: 0;
+  margin-top: 0.7rem;
   margin-bottom: 140px;
   position: relative;
 }
@@ -339,12 +343,185 @@ nav .links ul {
   color: #122231;
   gap: 10px;
 }
-
-.build{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.cardSection {
   width: 100%;
+  /* max-width: 1240px;
+  margin: auto; */
+  margin: 0;
+  background: white;
+  position: relative;
+  z-index: 1;
+  padding: 60px 0 100px;
+  border-radius: 0px 0px 80px 80px;
+}
+.build {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: start;
   max-width: 1240px;
   margin: auto;
+}
+.build span {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: rgb(37, 122, 245);
+}
+.build h3 {
+  font-size: 48px;
+  line-height: 66px;
+  margin: 0;
+}
+
+.build p {
+  font-size: 24px;
+  line-height: 35px;
+  margin: 18px 0 53px;
+}
+
+.card {
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  display: flex;
+
+  cursor: pointer;
+  position: relative;
+  height: 540px;
+  width: 392px;
+  background-color: rgb(241, 246, 247);
+  overflow: hidden;
+
+  border-radius: 20px;
+  padding: 30px 10px 30px 30px;
+}
+.card .icons img.icon {
+  align-items: center;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: -24rem;
+  transform: translateY(0px);
+  visibility: hidden;
+  right: 0;
+
+  padding: 2rem 3.5rem;
+}
+.card .icons img.showBounce {
+  visibility: visible;
+  animation: bounce 0.97s cubic-bezier(0.28, 0.84, 0.42, 1) 0.2s both;
+}
+.card .icons img.icon.hide {
+  visibility: hidden;
+  animation: none;
+}
+.card .icons img.icon2 {
+  align-items: center;
+  width: 145%;
+  object-fit: cover;
+  position: absolute;
+  bottom: -2rem;
+  transform: translateY(0px);
+  visibility: hidden;
+  right: -20%;
+
+  padding: 2rem 3.5rem;
+}
+.card:hover{
+  box-shadow: 0 0 7px 5px #ced3da;
+}
+.card .icons img.icon2.showHover {
+  visibility: visible;
+  animation: bounce 0.97s cubic-bezier(0.28, 0.84, 0.42, 1) 0.2s both;
+}
+.card.hover {
+  background: #d8f4ff;
+}
+
+.card .txtCard p {
+  line-height: 22px;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px 0px 10px;
+  max-width: 290px;
+  min-height: 60px;
+  color: rgb(61, 79, 96);
+  margin: 18px 0px 10px;
+}
+
+.card .txtCard h5 {
+  font-family: "boldNue", "san-serif";
+  font-weight: 900;
+  font-size: 24px;
+  color: rgb(6, 15, 33);
+  line-height: 42px;
+  margin-top: 25px;
+}
+
+.card .txtCard span a {
+  position: relative;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(600px);
+  }
+  30% {
+    transform: translateY(-45px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  65% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.card_container {
+  display: grid;
+  max-width: 1240px;
+  margin: auto;
+  row-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.cardSection .gs {
+  border-radius: 60px;
+  padding: 18px 26px;
+  gap: 10px;
+  background: #0935d1;
+  color: #fff;
+  margin-top: 5rem;
+  line-height: 100%;
+  cursor: pointer;
+  justify-self: center;
+  align-self: center;
+  
+  letter-spacing: -1%;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+.cardSection .gs i {
+  background: white;
+  padding: 10px 10px;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
