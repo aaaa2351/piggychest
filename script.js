@@ -6,8 +6,11 @@ const sv = document.getElementById("sv");
 
 const h_sec = document.querySelector("#h_sec");
 const linkSave = document.querySelector(".linkSave");
+const introVideo = document.querySelector(".introVideo");
+const skipIntro = document.querySelector(".skipIntro");
 const linkRes = document.querySelector(".linkRes");
 const heroH = document.querySelector(".hero h1");
+const intro = document.querySelector(".intro");
 const herop = document.querySelector(".getApp p");
 const cards = document.querySelectorAll(".card");
 const secImg = document.querySelector("img.main_img_s ");
@@ -18,6 +21,8 @@ const investCards = document.querySelectorAll(".invest_card");
 const cardConts = document.querySelectorAll(".card");
 const imageBanner = document.querySelectorAll(".imageBanner");
 const testCards = document.querySelectorAll(".cardT");
+const dontShow = document.querySelector(".dontShow");
+const dontShowInput = document.querySelector(".dontShowInput");
 const builds = document.querySelectorAll(`.build h3, 
 .build p,
 .build span,
@@ -46,8 +51,7 @@ const transitionList = [
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 20) {
     header.classList.add("scrolled");
-  }
- else {
+  } else {
     header.classList.remove("scrolled");
   }
 });
@@ -136,7 +140,7 @@ const observerHeroH = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 },
+  // { threshold: 0.1 },
 );
 transitionList.forEach((eachlist) => {
   observerHeroH.observe(eachlist);
@@ -162,12 +166,12 @@ hamburger.onclick = function () {
 linkSave.onclick = function () {
   hamburger.classList.remove("open");
   h_menu.classList.remove("open");
-  sv.scrollIntoView({ behaviour: "smooth" });
+  sv.scrollIntoView({ behavior: "smooth" });
 };
 linkRes.onclick = function () {
   hamburger.classList.remove("open");
   h_menu.classList.remove("open");
-  h_sec.scrollIntoView({ behaviour: "smooth" });
+  h_sec.scrollIntoView({ behavior: "smooth" });
 };
 document.querySelectorAll(".card").forEach((card) => {
   card.addEventListener("transitionend", (e) => {
@@ -176,3 +180,38 @@ document.querySelectorAll(".card").forEach((card) => {
     }
   });
 });
+function finished() {
+  intro.classList.add("finished");
+  introVideo.pause();
+  document.body.style.overflow = "";
+}
+
+document.body.style.overflow = "hidden";
+
+introVideo.addEventListener("ended", () => {
+  finished();
+});
+skipIntro.onclick = function () {
+  finished();
+};
+if (localStorage.getItem("shouldShow") === null) {
+  localStorage.setItem("shouldShow", "true");
+}
+
+dontShowInput.checked = localStorage.getItem("shouldShow") === "false";
+
+dontShowInput.onchange = function () {
+  localStorage.setItem(
+  "shouldShow",
+  dontShowInput.checked ? "false" : "true"
+);
+};
+if (localStorage.getItem("shouldShow") === "false") {
+  finished();
+  if(intro){
+  intro.classList.remove('show')
+  }
+} else {
+  intro.classList.add('show')
+  document.body.style.overflow = "hidden";
+}
