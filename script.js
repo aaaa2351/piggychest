@@ -88,9 +88,6 @@ const observer = new IntersectionObserver(
   { threshold: 0.5 },
 );
 
-cards.forEach((card) => {
-  observer.observe(card);
-});
 let pTime;
 const imgVid = document.querySelector(".rt_invest");
 const iframeObserve = new IntersectionObserver(
@@ -129,8 +126,6 @@ const iframeObserve = new IntersectionObserver(
   { threshold: 0.2 },
 );
 
-iframeObserve.observe(iframe);
-
 const observerHeroH = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -142,9 +137,19 @@ const observerHeroH = new IntersectionObserver(
   },
   // { threshold: 0.1 },
 );
-transitionList.forEach((eachlist) => {
-  observerHeroH.observe(eachlist);
-});
+
+function startPage() {
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
+
+  transitionList.forEach((element) => {
+    observerHeroH.observe(element);
+  });
+
+  iframeObserve.observe(iframe);
+}
+
 window.addEventListener("click", () => {
   clearTimeout(pTime);
   iframe.classList.remove("playing");
@@ -183,10 +188,13 @@ document.querySelectorAll(".card").forEach((card) => {
 function finished() {
   intro.classList.add("finished");
   introVideo.pause();
-  document.body.style.overflow = "";
+document.body.style.overflow=''
+  setTimeout(() => {
+    intro.remove();
+    startPage();
+  }, 1000);
 }
 
-document.body.style.overflow = "hidden";
 
 introVideo.addEventListener("ended", () => {
   finished();
@@ -201,17 +209,12 @@ if (localStorage.getItem("shouldShow") === null) {
 dontShowInput.checked = localStorage.getItem("shouldShow") === "false";
 
 dontShowInput.onchange = function () {
-  localStorage.setItem(
-  "shouldShow",
-  dontShowInput.checked ? "false" : "true"
-);
+  localStorage.setItem("shouldShow", dontShowInput.checked ? "false" : "true");
 };
 if (localStorage.getItem("shouldShow") === "false") {
-  finished();
-  if(intro){
-  intro.classList.remove('show')
-  }
+  intro.remove();
+  startPage();
 } else {
-  intro.classList.add('show')
+  intro.classList.add("show");
   document.body.style.overflow = "hidden";
 }

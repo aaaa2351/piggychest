@@ -340,7 +340,7 @@ nav .hamburger {
   max-width: 710px;
   font-family: "boldNue", sans-serif;
   opacity: 0;
-  transform: scale(0.5) rotate(25deg) translateY(100px);
+  transform: scale(0.5) rotate(15deg) translateY(100px);
   transition: 0.7s ease;
 }
 .hero h1 .icon svg {
@@ -483,7 +483,7 @@ nav .hamburger {
 .security .txt {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -730,7 +730,7 @@ nav .hamburger {
   display: grid;
   max-width: 1240px;
   margin: 0 auto;
-  padding-inline: 20px;
+  padding: 20px;
   gap: 25px 17px;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   justify-items: center;
@@ -2384,7 +2384,7 @@ img.main_img_s.show {
   }
   .stickyImg{
     padding: 5px 15px;
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-wrap: wrap;
   }
 }
