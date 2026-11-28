@@ -6,6 +6,7 @@ const sv = document.getElementById("sv");
 
 const h_sec = document.querySelector("#h_sec");
 const linkSave = document.querySelector(".linkSave");
+const muteBtnt = document.querySelector(".muteBtnt");
 const introVideo = document.querySelector(".introVideo");
 const skipIntro = document.querySelector(".skipIntro");
 const linkRes = document.querySelector(".linkRes");
@@ -22,6 +23,8 @@ const cardConts = document.querySelectorAll(".card");
 const imageBanner = document.querySelectorAll(".imageBanner");
 const testCards = document.querySelectorAll(".cardT");
 const dontShow = document.querySelector(".dontShow");
+const cookie = document.querySelector(".cookie");
+const cookieBtns = document.querySelectorAll(".btnCookies button");
 const dontShowInput = document.querySelector(".dontShowInput");
 const builds = document.querySelectorAll(`.build h3, 
 .build p,
@@ -188,13 +191,12 @@ document.querySelectorAll(".card").forEach((card) => {
 function finished() {
   intro.classList.add("finished");
   introVideo.pause();
-document.body.style.overflow=''
+  document.body.style.overflow = "";
   setTimeout(() => {
     intro.remove();
     startPage();
   }, 1000);
 }
-
 
 introVideo.addEventListener("ended", () => {
   finished();
@@ -218,3 +220,58 @@ if (localStorage.getItem("shouldShow") === "false") {
   intro.classList.add("show");
   document.body.style.overflow = "hidden";
 }
+const muteBtntI = document.querySelector(".muteIcon");
+
+muteBtnt.onclick = function () {
+  if (muteBtntI.classList.contains("fa-volume-high")) {
+    muteBtntI.classList.remove("fa-volume-high");
+    muteBtntI.classList.add("fa-volume-xmark");
+    introVideo.muted = true;
+  } else {
+    muteBtntI.classList.remove("fa-volume-xmark");
+    muteBtntI.classList.add("fa-volume-high");
+    introVideo.muted = false;
+  }
+  console.log(introVideo.muted);
+};
+
+function checkVidToPlay() {
+  if (window.innerWidth < 1100 && window.innerWidth > 500) {
+    console.log("wrks  width<1100");
+    introVideo.src = "video/mobile.mp4";
+  }
+  if (window.innerWidth <= 500) {
+    console.log("wrks width>=500");
+    introVideo.src = "video/smallMobile.mp4";
+  }
+  if (window.innerWidth > 1100) {
+    console.log("wrks width>1100");
+    introVideo.src = "video/intro.mp4";
+  }
+}
+checkVidToPlay();
+window.addEventListener("resize", () => {
+  checkVidToPlay();
+});
+
+let storedCookie = localStorage.getItem("cookiesShow");
+let showCook = storedCookie === null ? true : storedCookie === "true";
+
+if (!showCook) {
+  cookie.classList.add("hiddenCookie");
+} else {
+  cookie.classList.remove("hiddenCookie");
+}
+cookieBtns.forEach((cookieBtn) => {
+  cookieBtn.addEventListener("click", () => {
+    cookie.classList.add("hiddenCookie");
+    showCook = false;
+    localStorage.setItem("cookiesShow", "false");
+  });
+});
+console.log(showCook)
+window.addEventListener("scroll", () => {
+  if (showCook) {
+    cookie.classList.remove("hiddenCookie");
+  }
+});

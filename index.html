@@ -24,23 +24,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="intro" >
-<video
-  class="introVideo"
-  autoplay
-  muted
-  playsinline
-  preload="auto"
-  src="video/intro.mp4">
-</video>
-<div class="instrc">
-  <button class="skipIntro" >Skip Intro</button>
-  <div class="dontShow">
-    <input type="checkbox" class="dontShowInput" name="" id="">
-    <label>Don't Show This Again</label>
-  </div>
-</div>
-</div>
+    <div class="intro">
+      <video
+        class="introVideo"
+        autoplay
+        muted
+        playsinline
+        preload="auto"
+        src="video/intro.mp4"
+      ></video>
+
+      <div class="instrc">
+        <div class="muteBtnt">
+          <i class="muteIcon fa-solid fa-volume-xmark"></i>
+          mute
+        </div>
+        <button class="skipIntro">Skip Intro</button>
+        <div class="dontShow">
+          <input type="checkbox" class="dontShowInput" name="" id="" />
+          <label>Don't Show This Again</label>
+        </div>
+      </div>
+    </div>
     <header>
       <nav class="margn">
         <div class="flex_nav1">
@@ -336,7 +341,33 @@
         </div>
       </div>
     </header>
-
+    <div class="cookie hiddenCookie">
+      <div class="cookieswrap">
+      <div class="cookTxt">
+        <h1>Cookie Notification</h1>
+        <p>
+          We use cookies and similar technologies to ensure the proper
+          functioning of our website and improve your experience. You may choose
+          to manage your preferences by accepting all cookies or rejecting
+          optional cookies at any time. By selecting “Accept All,” you consent
+          to the collection and processing of your personal data through
+          cookies. For more information on how we use cookies and process
+          personal data, please see our privacy policy <a href="#">here</a>
+        </p>
+      </div>
+      <div class="btnCookies">
+        <button class="accept">
+          Accept All
+        </button>
+        <button class="reject">
+Decline optional cookies
+        </button>
+        <a class="prefs" href="#">
+          Manage Preferences
+        </a>
+      </div>
+    </div>
+    </div>
     <main>
       <section class="hero" id="h_sec">
         <div class="txts">
@@ -818,7 +849,7 @@
         <div class="cardTs">
           <div class="cardT cardT1">
             <div class="pIcon">
-              <img src="/images/av1.avif" alt="" />
+              <img src="/images/img725396eb22.jpeg" alt="" />
             </div>
             <p class="desc">
               Hi lovelies, my name is Ezinne, I came to know about piggy vest
@@ -829,7 +860,7 @@
           </div>
           <div class="cardT cardT2">
             <div class="pIcon">
-              <img src="/images/portrait-david-kimani.png" alt="" />
+              <img src="/images/img6ef4f48b4b.jpeg" alt="" />
             </div>
             <p class="desc">
               I saw the Piggyvest advertisement on BBNaija show 2022 and checked
@@ -839,7 +870,7 @@
           </div>
           <div class="cardT cardT3">
             <div class="pIcon">
-              <img src="/images/portrait-david-kimani.png" alt="" />
+              <img src="/images/img453cede493.jpeg" alt="" />
             </div>
             <p class="desc">
               I saw the Piggyvest advertisement on BBNaija show 2022 and checked
@@ -849,7 +880,7 @@
           </div>
           <div class="cardT cardT4">
             <div class="pIcon">
-              <img src="/images/av2.jpg" alt="" />
+              <img src="/images/img5d2175e88f.jpeg" alt="" />
             </div>
             <p class="desc">
               Piggy vest has helped me learn how to save money and they also
@@ -863,16 +894,18 @@
     <footer>
       <div class="stickyImg">
         <p>As featured in</p>
-        <img src="images/tclogo@2x.png" alt="" class="imageBanner img1" />
-        <img src="images/output.png" alt="" class="imageBanner img2" />
-        <img src="images/brand1.png" alt="" class="imageBanner img3" />
-        <img
-          src="images/pym-removebg-preview.svg"
-          alt=""
-          class="imageBanner img4"
-        />
-        <img src="images/fast.svg" alt="" class="imageBanner img4" />
-        <img src="images/cio.svg" alt="" class="imageBanner img5" />
+        <div class="imgsSticky">
+          <img src="images/tclogo@2x.png" alt="" class="imageBanner img1" />
+          <img src="images/output.png" alt="" class="imageBanner img2" />
+          <img src="images/brand1.png" alt="" class="imageBanner img3" />
+          <img
+            src="images/pym-removebg-preview.svg"
+            alt=""
+            class="imageBanner img4"
+          />
+          <img src="images/fast.svg" alt="" class="imageBanner img4" />
+          <img src="images/cio.svg" alt="" class="imageBanner img5" />
+        </div>
       </div>
       <section class="ftr1">
         <div class="icon1">

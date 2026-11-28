@@ -934,7 +934,7 @@ nav .hamburger {
   position: relative;
   width: 90%;
   max-width: 1000px;
-  margin: -25.3% auto 0;
+  margin: -15.3% auto 0;
 }
 
 .txts_open_house img {
@@ -1200,6 +1200,7 @@ nav .hamburger {
   color: rgb(61, 79, 96);
   line-height: 25px;
   letter-spacing: -3%;
+  max-width: 400px;
   text-align: justify;
 }
 .cardT p.pnam {
@@ -1381,17 +1382,19 @@ footer .icon1 svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   /* flex-wrap: nowrap;             */
 }
 .stickyImg p {
   color: #171616;
   white-space: nowrap;
-  font-size: 14px;
+   font-size: clamp(16px, 2.3vh, 20px);
+   font-weight: 500;
+   margin-right: 10px;
+
 }
 
 .stickyImg img.imageBanner {
-  width: clamp(30px, 10vw, 100px);
+  width: clamp(80px, 10vw, 100px);
   /* width: 100px; */
   height: auto;
   object-fit: contain;
@@ -1884,7 +1887,12 @@ img.main_img_s.show {
   height: 100%;
   object-fit: cover;
 }
-
+.imgsSticky{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .instrc {
   position: absolute;
   bottom: 30px;
@@ -1894,18 +1902,25 @@ img.main_img_s.show {
   align-items: center;
   gap: 14px;
   z-index: 10;
+  flex-wrap: wrap;
   white-space: nowrap;
 }
-
+.muteBtnt i{
+  color: white;
+}
+.muteBtnt{
+  display: flex;
+  gap: 10px;
+}
 .skipIntro,
+.muteBtnt,
 .dontShow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 38px;
   padding: 0 16px;
   color: #f1f5f9;
-  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -1934,6 +1949,7 @@ img.main_img_s.show {
 .dontShow {
   gap: 9px;
 }
+
 .dontShow:has(input:checked) {
   background: rgba(45, 55, 72, 0.9);
   border-color: rgba(255, 255, 255, 0.45);
@@ -1955,6 +1971,97 @@ img.main_img_s.show {
   cursor: pointer;
 }
 
+.cookie{
+  background: #0C1825;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 997;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 35px 0;
+}
+.cookieswrap{
+  width: 100%;
+  max-width: 1270px;
+    display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cookTxt{
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* max-width: ; */
+}
+.cookie .cookTxt p{
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0px;
+}
+.cookie .cookTxt h1{
+  color: white;
+      font-size: 23px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+.cookie .prefs{
+    color: rgb(255, 255, 255, 0.75);
+      font-size: 14px;
+    line-height: 1.65;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.cookie .prefs:hover{
+  color: white;
+  white-space: nowrap;
+}
+.btnCookies{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap:15px;
+}
+.btnCookies button{
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  letter-spacing: 0.1;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+  padding: 15px 18px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
+
+.btnCookies button.reject{
+  background: transparent;
+  border: 1px solid #0c1825;
+  color: white;
+  border: 1px solid rgb(255, 255, 255, 0.75);
+  padding: 15px 20px;
+}
+.cookieswrap p a{
+  color:white;
+  text-decoration: underline;
+  display: inline;
+  align-items: center;
+}
+.cookie.hiddenCookie{
+  display: none;
+}
 @media (max-width: 1200px) {
   .hero {
     flex-direction: column;
@@ -1978,7 +2085,7 @@ img.main_img_s.show {
     /* overflow: hidden; */
     transform: translate(-50%, -50%);
     width: max-content;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 10px 10px;
     justify-content: center;
   }
@@ -2116,6 +2223,17 @@ img.main_img_s.show {
     width: 1em;
     height: 1em;
   }
+  .cookie{
+    /* padding: 5vw; */
+    padding: clamp(15px, 5vw, 25px);
+  }
+  .btnCookies{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cookieswrap{
+    gap: 20px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -2147,6 +2265,10 @@ img.main_img_s.show {
 }
 
 @media (max-width: 992px) {
+  .investTxt p{
+    max-width: 500px;
+    /* display: none; */
+  }
   .links,
   .flex_nav2 {
     display: none;
@@ -2283,6 +2405,14 @@ img.main_img_s.show {
     transition-delay: 0.25s;
     opacity: 0;
   }
+  .cookieswrap{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .cookieswrap p{
+    text-align: left;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2317,14 +2447,15 @@ img.main_img_s.show {
   }
   .investTxt p {
     font-size: 15px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
   }
   .invest_card {
     width: 100%;
     max-width: 400px;
   }
   .txtInvest .desc {
-    max-width: 100%;
+    max-width: 400px;
   }
   .txtVid h2 {
     font-size: 36px;
@@ -2346,6 +2477,9 @@ img.main_img_s.show {
   .getApp .getAppBtns button {
     font-size: 12px;
     padding: 10px 15px;
+  }
+  .stickyImg img{
+    width: 90px;
   }
   .testimonial h1 {
     font-size: 26px;
@@ -2387,6 +2521,22 @@ img.main_img_s.show {
     /* overflow: hidden; */
     flex-wrap: wrap;
   }
+}
+@media (max-width: 1270px) {
+  .vid{
+      margin: -25.3% auto 0;
+  }
+}
+@media (max-width: 1349px) {
+    .investTxt  {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+        text-align: center;
+    }
+
+
 }
 
 /* 
